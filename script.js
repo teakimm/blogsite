@@ -76,24 +76,26 @@ let rPostEnd = [" faker is washed.", " cats actually have only 6 lives believe i
 
 let newData = [];
 let postCount = 0;
-function newPostCounter() {
-  postCount++;
+function getDate () {
   let currentDate = new Date(); 
   let dateTime = String((currentDate.getMonth()+1)).padStart(2, '0') + "/" 
   + String(currentDate.getDate()).padStart(2, '0') + "/" + currentDate.getFullYear() + " @ "  
   + String(currentDate.getHours()).padStart(2, '0') + ":" 
   + String(currentDate.getMinutes()).padStart(2, '0') + ":"
   + String(currentDate.getSeconds()).padStart(2, '0');
+  return dateTime;
+}
+function newPostCounter() {
+  postCount++;
   let newPost = {
     user: rUser[Math.floor(Math.random()*rUser.length)],
     title: rTitle[Math.floor(Math.random()*rTitle.length)],
     body: rPostStart[Math.floor(Math.random()*rPostStart.length)] + rPostEnd[Math.floor(Math.random()*rPostEnd.length)],
-    date: dateTime
+    date: getDate()
   }
   dummyData.unshift(newPost);
   newData.push(newPost);
   document.querySelector(".update").innerHTML = "Update Posts (" + postCount + ")" ;
-  console.log(dummyData)
 }
 //random time between 3 and 10 seconds, technically part 5 but w/e
 setInterval(newPostCounter, Math.floor(Math.random() * (10000 - 3000 + 1) + 3000));
@@ -104,6 +106,7 @@ update.addEventListener("click", e => {
     document.querySelector(".update").innerHTML = "No New Posts"
     renderData(newData);
     newData = [];
+    console.log(dummyData)
 });
 //part 3
 const modal = document.querySelector(".modal");
@@ -121,3 +124,14 @@ window.addEventListener("click", e => {
     modal.style.display = "none";
   }
 });
+let submit = () => {
+  let userPost = {
+    user: document.querySelector(".user").value,
+    title: document.querySelector(".title").value,
+    body: document.querySelector(".post-body").value,
+    date: getDate()
+  }
+  dummyData.unshift(userPost);
+  let temp = [userPost];
+  renderData(temp);
+};

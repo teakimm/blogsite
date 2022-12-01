@@ -95,7 +95,7 @@ function newPostCounter() {
   }
   dummyData.unshift(newPost);
   newData.push(newPost);
-  document.querySelector(".update").innerHTML = "Update Posts (" + postCount + ")" ;
+  document.querySelector(".update").innerHTML = "Update Posts (" + postCount + ")";
 }
 //random time between 3 and 10 seconds, technically part 5 but w/e
 setInterval(newPostCounter, Math.floor(Math.random() * (10000 - 3000 + 1) + 3000));
@@ -135,3 +135,8 @@ let submit = () => {
   let temp = [userPost];
   renderData(temp);
 };
+//part 4
+const users = document.querySelectorAll(".postUser");
+for(let user of users) {
+  console.log(user.innerHTML)
+}

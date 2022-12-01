@@ -4,10 +4,6 @@ body {
   align-items: center;
   text-align: center;
 }
-.post-container {
-  display: flex;
-  flex-direction: column-reverse;
-}
 .post {
   margin: 24px;
   background-color: lightpink;
@@ -62,4 +58,20 @@ body {
 .form {
   display: flex;
   flex-direction: column;
+}
+.postUser:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+img {
+  width: 80px;
+  border-radius: 15px;
+
+}
+img:hover {
+  width: 80px;
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
 }

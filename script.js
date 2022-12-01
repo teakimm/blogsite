@@ -4,80 +4,120 @@ let dummyData = [
     user: "karasmaiFanboy1",
     title: "Kayn nerfed again????",
     body: "nah bro, what is riot doing. this company man. smh. first they nerf eclipse and now this? ICANT.",
-    date: "06/09/2021 @ 16:09"
+    date: "11/09/2018 @ 16:09:15"
   },
   {
     user: "politicalUser58",
     title: "Bottled water drinkers beware",
     body: "have y'all heard that <em>current president</em> is contaminating our water supply?",
-    date: "08/15/2022 @ 03:24"
+    date: "08/15/2020 @ 03:24:06"
   },
   {
     user: "k3cats",
     title: "Cats are a first",
     body: "no KYAP, I highrolled my cat. She is such a sweetie.",
-    date: "11/05/2021 @ 23:24"
+    date: "11/05/2021 @ 23:24:59"
   },
   {
     user: "xXaramEnjoyerXx",
     title: "Im sick of seeing tryhards in my aram games",
     body: "I swear to god, if i see one more exhaust comet ashe that rushes mandate on the enemy team while I get a lux who gets horizon focus second item, im gonna punch a hole through my monitor. on god frfr.",
-    date: "11/30/2022 @ 18:48"
+    date: "11/30/2022 @ 18:48:00"
   }
 ];
-const postList = document.querySelector('.postContainer');
-for(let data of dummyData) {
-  let post = document.createElement('div'); 
-  post.className = "post";
-  let postUser = document.createElement('div');
-  postUser.className = 'postUser';
-  postUser.innerText = data.user;
-  let postTitle = document.createElement('div');
-  postTitle.className = 'postTitle';
-  postTitle.innerHTML = data.title;
-  let postBody = document.createElement('div');
-  postBody.className = 'postBody';
-  postBody.innerHTML = data.body;
-  let postDate = document.createElement('div');
-  postDate.className = 'postDate';
-  postDate.innerText = data.date;
-  postList.appendChild(post);
-  post.appendChild(postUser);
-  post.appendChild(postTitle);
-  post.appendChild(postBody);
-  post.appendChild(postDate);
+const postList = document.querySelector('.post-container');
+function renderData(array) {
+  for(let data of array) {
+    let post = document.createElement('div'); 
+    post.className = "post";
+    let postUser = document.createElement('div');
+    postUser.className = 'postUser';
+    postUser.innerText = data.user;
+    let postTitle = document.createElement('div');
+    postTitle.className = 'postTitle';
+    postTitle.innerHTML = data.title;
+    let postBody = document.createElement('div');
+    postBody.className = 'postBody';
+    postBody.innerHTML = data.body;
+    let postDate = document.createElement('div');
+    postDate.className = 'postDate';
+    postDate.innerText = data.date;
+    postList.appendChild(post);
+    post.appendChild(postUser);
+    post.appendChild(postTitle);
+    post.appendChild(postBody);
+    post.appendChild(postDate);
+  }
 }
+renderData(dummyData);
 //part 2
 let rUser = ["rockman5", "cleverUsername2", "tkimm", "lllIllII", "OG2Glocks", "pupper3", "sustin2", "kennethTsao97", "teaEnjoyerr",
             "brotherManBilll", "animeGaming92", "ligmonster2", "defNotAFakeAccount", "anelgo79", "sonicfyre", "ICANNOT2", "ohMyGee",
             "thatDawg", "lumfao", "shillingGang2", "jjfishHater2", "hhgreggScammer12", "dreamStan07", "proAmongusPlayerr", "nahButLike",
-            "aznNinjaJohn", "XdarkWingX", "brisketPlayer2", "whoAmIQuestionMark", "LordMorgan18", "TFTisAllLuck", "mortDogma", "huehuehuehehe2"];
-let rTitle = ["Good take, I swear", "BREAKING NEWS", "Possibly a bad take", "Check it:", "Read on, if you dare", "My thoughts on today", "HE did WHAT??", "Look at ths",
+            "aznNinjaJohn", "XdarkWingX", "brisketPlayer2", "whoAmIQuestionMark", "LordMorgan18", "TFTisAllLuck", "mortDogma", "huehuehuehehe2", "xXaramEnjoyerXx", 
+            "k3cats", "politicalUser58", "karasmaiFanboy1"];
+let rTitle = ["Good take, I swear", "BREAKING NEWS", "Possibly a bad take", "Check it:", "Read on, if you dare", "My thoughts on today", "HE did WHAT??", "Look at this",
               "Yep im gonna get canceled for this...", "Do people even title their posts anymore?", "NOT A SPONSORED POST", "POST SPONSORED BY RAID: SHADOW LEGENDS", "LMAO WHAT??", "Yikes...",
               "Dear diary:", "Random thought #321", "TIL:", "Post Title Here", "Heres an opinion of mine...", "twitter is better than this crap", "SUBJECT: DO NOT REPLY",
-              "I cannot wait to tell you guys:", "You guys have to hear this", "Okay, this is my last post", "My god, this was hard to type.", "You ever regret typing up a post?"];
+              "I cannot wait to tell you guys:", "You guys have to hear this", "Okay, this is my last post", "My god, this was hard to type.", "You ever regret typing up a post?", "This one is for the boys", "To all of my Homies",
+              "To my day ones:", "IMPORTANT MESSAGE", "PSA", "MUST READ"];
 let rPostStart = ["Nah man,", "dude you will not believe this,", "I leave for 20 minutes to hear this:", "Yesterday i had the craziest experience, I heard that",
                   "I overheard some dudes in sunglasses while i was on the subway back home after work, they said:", "dude,", "lmao,", "lol,", "my mom said to me that",
                   "I am beginning to believe that", "I think that", "Listen up,", "Possibly a bad take but,", "A wise man once said,", "Yo check this out, I think that",
-                  "lumfao,", "guys, guys,", "My brothers in christ,", "Attention all gamers:", "Only anime fans can continue reading:", "This is the best take you'll read all week,"]
+                  "lumfao,", "guys, guys,", "My brothers in christ,", "Attention all gamers:", "Only anime fans can continue reading:", "This is the best take you'll read all week,", "Guess what:",
+                  "Lookie here," , "My late mother always said,", "I live by this one fact of life:"]
 let rPostEnd = [" faker is washed.", " cats actually have only 6 lives believe it or not.", " a lot of people wish that they could swap places with their goldfish.",
-                " all bread tastes the same.", "these posts are actually generated by an ai.", " we're actually just in a simulation.", " the moon landing was real. But they sent lizards, not humans.", 
+                " all bread tastes the same.", " these posts are actually generated by an ai.", " we're actually just in a simulation.", " the moon landing was real. But they sent lizards, not humans.", 
                 " league of legends is totally a fun game. For sure.", " anime is for intellectuals", " the harry potter books and films are mid." , " an apple a day does not keep the doctor away. It's all propaganda by Monsanto. Wake up sheeps.",
                 " project M is the superior smash game.", " reading is for chumps.", " I hate olives on my pineapple pizza.", " red delicious apples are TRASH.", " saying ggez after winning is a war crime.", " taking exhaust in aram is for insecure people", 
-                " im running out of ideas for posts", " one more for the fans is never worth it. Just go to bed.", " the BTS army is weak. I can take em'", " I cant smell.", " Chipp Zanuff is mid tier."];
-let currentDate = new Date(); 
-let dateTime = String((currentDate.getMonth()+1)).padStart(2, '0') + "/" + String(currentDate.getDate()).padStart(2, '0') + "/" + currentDate.getFullYear() + " @ "  + String(currentDate.getHours()).padStart(2, '0') + ":" + String(currentDate.getMinutes()).padStart(2, '0');
+                " im running out of ideas for posts", " one more for the fans is never worth it. Just go to bed.", " the BTS army is weak. I can take em'", " I can't smell.", " Chipp Zanuff is mid tier." ,
+                " Dota is better than Smite", " 2pac fled to Panama in 2005.", " Rome was actually built in a day."];
 
 
-let newPost = {
-  user: rUser[Math.floor(Math.random()*rUser.length)],
-  title: rTitle[Math.floor(Math.random()*rTitle.length)],
-  body: rPostStart[Math.floor(Math.random()*rPostStart.length)] + rPostEnd[Math.floor(Math.random()*rPostEnd.length)],
-  date: dateTime
-}
+let newData = [];
 let postCount = 0;
 function newPostCounter() {
   postCount++;
-  
+  let currentDate = new Date(); 
+  let dateTime = String((currentDate.getMonth()+1)).padStart(2, '0') + "/" 
+  + String(currentDate.getDate()).padStart(2, '0') + "/" + currentDate.getFullYear() + " @ "  
+  + String(currentDate.getHours()).padStart(2, '0') + ":" 
+  + String(currentDate.getMinutes()).padStart(2, '0') + ":"
+  + String(currentDate.getSeconds()).padStart(2, '0');
+  let newPost = {
+    user: rUser[Math.floor(Math.random()*rUser.length)],
+    title: rTitle[Math.floor(Math.random()*rTitle.length)],
+    body: rPostStart[Math.floor(Math.random()*rPostStart.length)] + rPostEnd[Math.floor(Math.random()*rPostEnd.length)],
+    date: dateTime
+  }
+  dummyData.unshift(newPost);
+  newData.push(newPost);
+  document.querySelector(".update").innerHTML = "Update Posts (" + postCount + ")" ;
+  console.log(dummyData)
 }
-setInterval(newPostCounter, 8000);
+//random time between 3 and 10 seconds, technically part 5 but w/e
+setInterval(newPostCounter, Math.floor(Math.random() * (10000 - 3000 + 1) + 3000));
+
+const update = document.querySelector(".update");
+update.addEventListener("click", e => {
+    postCount = 0;
+    document.querySelector(".update").innerHTML = "No New Posts"
+    renderData(newData);
+    newData = [];
+});
+//part 3
+const modal = document.querySelector(".modal");
+const newPostBtn = document.querySelector(".new-post-button");
+const closeBtn = document.querySelector(".close");
+
+newPostBtn.addEventListener("click", e => {
+  modal.style.display = "block";
+});
+closeBtn.addEventListener("click", e => {
+  modal.style.display = "none";
+});
+window.addEventListener("click", e => {
+  if(e.target == modal){
+    modal.style.display = "none";
+  }
+});

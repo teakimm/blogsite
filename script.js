@@ -4,31 +4,31 @@ let dummyData = [
     user: "karasmaiFanboy1",
     title: "Riot please",
     body: "Kayn is at a weak spot rn, he needs to be untargetable during reaping slash.",
-    date: "11/09/2022 @ 16:09:15"
+    date: "11/09/2022 - 16:09:15"
   },
   {
     user: "politicalUser58",
     title: "Bottled water drinkers beware",
     body: "have y'all heard that <em>current president</em> is contaminating our water supply?",
-    date: "08/15/2022 @ 03:24:06"
+    date: "08/15/2022 - 03:24:06"
   },
   {
     user: "karasmaiFanboy1",
     title: "Kayn nerfed again????",
     body: "nah bro, what is riot doing. this company man. smh. first they nerf eclipse and now this? ICANT.",
-    date: "05/09/2020 @ 16:09:15"
+    date: "05/09/2020 - 16:09:15"
   },
   {
     user: "k3cats",
     title: "Cats are a first",
     body: "no KYAP, I highrolled my cat. She is such a sweetie.",
-    date: "11/05/2019 @ 23:24:59"
+    date: "11/05/2019 - 23:24:59"
   },
   {
     user: "xXaramEnjoyerXx",
     title: "Im sick of seeing tryhards in my aram games",
-    body: "I swear to god, if i see one more exhaust comet ashe that rushes mandate on the enemy team while I get a lux who gets horizon focus second item, im gonna punch a hole through my monitor. on god frfr.",
-    date: "11/30/2018 @ 18:48:00"
+    body: "I swear to god, if i see one more exhaust comet ashe that rushes mandate on the enemy team, im gonna punch a hole through my monitor.",
+    date: "11/30/2018 - 18:48:00"
   }
 ];
 const postList = document.querySelector('.post-container');
@@ -83,7 +83,7 @@ let postCount = 0;
 function getDate () {
   let currentDate = new Date(); 
   let dateTime = String((currentDate.getMonth()+1)).padStart(2, '0') + "/" 
-  + String(currentDate.getDate()).padStart(2, '0') + "/" + currentDate.getFullYear() + " @ "  
+  + String(currentDate.getDate()).padStart(2, '0') + "/" + currentDate.getFullYear() + " - "  
   + String(currentDate.getHours()).padStart(2, '0') + ":" 
   + String(currentDate.getMinutes()).padStart(2, '0') + ":"
   + String(currentDate.getSeconds()).padStart(2, '0');
